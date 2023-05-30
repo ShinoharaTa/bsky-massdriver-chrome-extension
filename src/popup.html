@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <style>
       * {
         box-sizing: border-box;
@@ -15,12 +16,56 @@
       }
       iframe {
         min-width: 600px;
-        min-height: 200px;
+        min-height: 600px;
         border: none;
+        margin: 0;
+        display: block;
+      }
+      #menu {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        background-color: #f0f0f0;
+      }
+      .menu-button {
+        position: relative;
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        color: #212529;
+        border-radius: 0.5rem;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        background: #fff;
+      }
+
+      .menu-button:hover {
+        color: #fff;
+        background: #ccc;
       }
     </style>
   </head>
   <body>
-    <iframe src="https://mdrv.shino3.net"></iframe>
+    <iframe id="app-frame" src="https://mdrv.shino3.net?simple=true"></iframe>
+    <div id="menu">
+      <button class="menu-button" id="share-button">
+        このサイトをBlueskyで共有
+      </button>
+    </div>
+    <script src="popup.js"></script>
   </body>
 </html>
